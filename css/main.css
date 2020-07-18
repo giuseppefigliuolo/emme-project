@@ -17,27 +17,27 @@ a {
 
 @font-face {
   font-family: ATUltraLight;
-  src: url("/fonts/ATOsmose-UltraLight.woff") format("woff");
+  src: url("../fonts/ATOsmose-UltraLight.woff") format("woff");
 }
 
 @font-face {
   font-family: ATLight;
-  src: url("/fonts/ATOsmose-Light.woff") format("woff");
+  src: url("../fonts/ATOsmose-Light.woff") format("woff");
 }
 
 @font-face {
   font-family: ATRegular;
-  src: url("/fonts/ATOsmose-Regular.woff") format("woff");
+  src: url("../fonts/ATOsmose-Regular.woff") format("woff");
 }
 
 @font-face {
   font-family: ATMedium;
-  src: url("/fonts/ATOsmose-Medium.woff") format("woff");
+  src: url("../fonts/ATOsmose-Medium.woff") format("woff");
 }
 
 @font-face {
   font-family: ATBold;
-  src: url("/fonts/ATOsmose-Bold.woff") format("woff");
+  src: url("../fonts/ATOsmose-Bold.woff") format("woff");
 }
 
 .capitalize {
