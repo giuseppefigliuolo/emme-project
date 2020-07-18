@@ -101,6 +101,12 @@ body {
   -webkit-box-shadow: -595px 1px 158px rgba(17, 17, 17, 0.76);
           box-shadow: -595px 1px 158px rgba(17, 17, 17, 0.76);
   max-width: 630px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 20% 80%;
+      grid-template-rows: 20% 80%;
 }
 
 .sidemenu__header {
@@ -119,6 +125,7 @@ body {
       -ms-flex-direction: row;
           flex-direction: row;
   min-height: 125px;
+  max-height: 146px;
 }
 
 .sidemenu__close-logo {
@@ -135,38 +142,42 @@ body {
   color: #000;
   text-transform: uppercase;
   font-family: "Playfair Display", serif;
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   font-weight: 400;
   text-align: center;
   margin-top: 3.2rem;
 }
 
 .sidemenu__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 4fr 1fr 5fr 4fr;
+      grid-template-rows: 4fr 1fr 5fr 4fr;
   height: 100%;
 }
 
 .sidemenu__body__ul {
+  padding-left: 7vh;
+  padding-top: 2vh;
   font-size: 1.35rem;
   text-align: right;
   width: 100%;
   padding-right: 12%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .sidemenu__body__ul ul li {
   padding-top: 1.1rem;
+  font-weight: 500;
 }
 
 .sidemenu__body__ul ul li a:hover {
@@ -184,12 +195,32 @@ body {
   padding: 0.6rem 12%;
   font-size: 1.1rem;
   font-family: "Playfair Display", serif;
-  text-align: right;
-  margin-bottom: -10%;
+  text-align: center;
+}
+
+.sidemenu__body__portfolio p {
+  padding-left: 7vh;
 }
 
 .sidemenu__body__social {
-  position: relative;
-  top: 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 2fr;
+      grid-template-rows: 1fr 2fr;
+}
+
+.sidemenu__body__social img {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
 }
 /*# sourceMappingURL=main.css.map */
