@@ -208,6 +208,7 @@ body {
 }
 
 .sidemenu__body__social__icons {
+  z-index: 30;
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
   grid-row: 3/4;
