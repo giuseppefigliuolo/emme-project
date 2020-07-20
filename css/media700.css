@@ -1,0 +1,15 @@
+@media (min-width: 700px) {
+  .sidemenu {
+    display: none;
+  }
+  .topbar__logo img {
+    width: 5.2rem;
+  }
+  .topbar__menu {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+}
+/*# sourceMappingURL=media700.css.map */
