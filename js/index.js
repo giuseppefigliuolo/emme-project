@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const setViewHeight = () => {
-    const body = document.querySelector("body");
-    body.style.height = window.innerHeight;
+    const body = document.querySelector(".landing");
+    body.style.maxHeight = window.innerHeight - document.querySelector(".topbar").clientHeight;
   };
   menuHandler();
   setViewHeight();
