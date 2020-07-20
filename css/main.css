@@ -271,7 +271,6 @@ body {
 }
 
 .landing {
-  max-height: 88vh;
   max-width: 100%;
   overflow: hidden;
   display: -ms-grid;
