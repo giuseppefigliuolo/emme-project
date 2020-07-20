@@ -15,8 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const setViewHeight = () => {
     const body = document.querySelector(".landing");
+    const sidemenu = document.querySelector(".sidemenu");
+
     // console.log(`${window.innerHeight - document.querySelector(".topbar").clientHeight}px`);
     body.style.height = `${window.innerHeight - document.querySelector(".topbar").clientHeight}px`;
+    sidemenu.style.height = `${window.innerHeight}px`;
   };
   menuHandler();
   setViewHeight();
