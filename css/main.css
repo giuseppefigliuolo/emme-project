@@ -275,6 +275,8 @@ body {
 }
 
 .landing {
+  position: relative;
+  top: 5vh;
   max-width: 100%;
   overflow: hidden;
   display: -ms-grid;
@@ -399,10 +401,13 @@ body {
   -ms-grid-row-span: 2;
   grid-row: 3/5;
   z-index: 3;
-  margin-top: 4vh;
+  margin-top: 0vh;
   width: 94%;
   position: relative;
   left: -9vw;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .landing__big-img {
@@ -527,6 +532,8 @@ body {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1/4;
+  position: relative;
+  top: 2vh;
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
@@ -561,7 +568,7 @@ body {
 }
 
 .project__btn p {
-  font-family: ATMedium;
+  font-family: ATRegular;
   width: 100%;
 }
 
