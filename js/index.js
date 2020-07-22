@@ -21,8 +21,24 @@ document.addEventListener("DOMContentLoaded", () => {
     body.style.height = `${window.innerHeight - document.querySelector(".topbar").clientHeight}px`;
     sidemenu.style.height = `${window.innerHeight}px`;
   };
+
+  const topbarHandler = () => {
+    const topbarLogo = document.querySelector(".topbar__logo");
+    const topbarFullLogo = document.querySelector(".topbar p");
+    window.addEventListener("scroll", evt => {
+      if (window.scrollY !== 0) {
+        console.log("ciao");
+        topbarLogo.classList.add("hidden");
+        topbarFullLogo.classList.remove("hidden");
+      } else {
+        topbarLogo.classList.remove("hidden");
+        topbarFullLogo.classList.add("hidden");
+      }
+    });
+  };
   menuHandler();
   setViewHeight();
+  topbarHandler();
 });
 
 //
