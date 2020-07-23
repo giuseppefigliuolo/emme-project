@@ -472,6 +472,14 @@ body {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1/4;
+  overflow: hidden;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.project__gallery__img-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -485,14 +493,12 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  overflow: scroll;
-  width: 100%;
+  position: relative;
+  left: -80vw;
 }
 
-.project__gallery img {
+.project__gallery__img-container img {
   width: 100%;
-  -webkit-transform: translateX(-12vw);
-          transform: translateX(-12vw);
   margin-right: 6vw;
   opacity: 0.6;
   -ms-flex-item-align: end;

@@ -22,23 +22,40 @@ document.addEventListener("DOMContentLoaded", () => {
     sidemenu.style.height = `${window.innerHeight}px`;
   };
 
-  const topbarHandler = () => {
+  const scrollHandler = () => {
     const topbarLogo = document.querySelector(".topbar__logo");
     const topbarFullLogo = document.querySelector(".topbar p");
+    // gallery variables
+    const gallery = document.querySelector(".project__gallery__img-container");
+    const landingDescription = document.querySelector(".landing__description h2").offsetTop;
+    let lastScroll = landingDescription;
+
     window.addEventListener("scroll", evt => {
       if (window.scrollY !== 0) {
-        console.log("ciao");
         topbarLogo.classList.add("hidden");
         topbarFullLogo.classList.remove("hidden");
       } else {
         topbarLogo.classList.remove("hidden");
         topbarFullLogo.classList.add("hidden");
       }
+      // Gallery-scroll handler
+      if (window.scrollY >= landingDescription) {
+        const newScroll = window.scrollY;
+        const style = getComputedStyle(gallery);
+        const galleryLeftPos = parseInt(style.left, 10);
+        if (newScroll > lastScroll) {
+          gallery.style.left = `${galleryLeftPos - 3}px`;
+        } else {
+          gallery.style.left = `${galleryLeftPos + 3}px`;
+        }
+        lastScroll = newScroll;
+      }
     });
   };
+
   menuHandler();
   setViewHeight();
-  topbarHandler();
+  scrollHandler();
 });
 
 //
