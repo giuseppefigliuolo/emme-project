@@ -27,8 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const topbarFullLogo = document.querySelector(".topbar p");
     // gallery variables
     const gallery = document.querySelector(".project__gallery__img-container");
-    const landingDescription = document.querySelector(".landing__description h2").offsetTop;
-    let lastScroll = landingDescription;
+    const landingDescriptionPos = document.querySelector(".landing__description h2").offsetTop;
+    const videoPos = document.querySelector(".project__video").offsetTop;
+    let lastScroll = landingDescriptionPos;
 
     window.addEventListener("scroll", evt => {
       if (window.scrollY !== 0) {
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         topbarFullLogo.classList.add("hidden");
       }
       // Gallery-scroll handler
-      if (window.scrollY >= landingDescription) {
+      if (window.scrollY >= landingDescriptionPos && window.scrollY < videoPos) {
         const newScroll = window.scrollY;
         const style = getComputedStyle(gallery);
         const galleryLeftPos = parseInt(style.left, 10);
