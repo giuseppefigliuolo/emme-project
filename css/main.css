@@ -730,7 +730,7 @@ body {
   height: 32vh;
   min-height: 300px;
   width: 65%;
-  margin: 3vh 0;
+  margin: 3vh 0 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -788,9 +788,56 @@ body {
 
 .contact__form form input {
   margin-top: 3vh;
+  padding: 7px;
+  width: 100%;
+  max-width: 300px;
 }
 
-.contact__form button {
+.contact__form form input::-webkit-input-placeholder {
+  font-family: ATRegular;
+  vertical-align: top;
+}
+
+.contact__form form input:-ms-input-placeholder {
+  font-family: ATRegular;
+  vertical-align: top;
+}
+
+.contact__form form input::-ms-input-placeholder {
+  font-family: ATRegular;
+  vertical-align: top;
+}
+
+.contact__form form input::placeholder {
+  font-family: ATRegular;
+  vertical-align: top;
+}
+
+.contact__form form #message {
+  height: 200px;
+  font-family: ATRegular;
+  width: 100%;
+  margin-top: 3vh;
+  padding: 7px;
+}
+
+.contact__form form #message::-webkit-input-placeholder-shown {
+  vertical-align: top;
+}
+
+.contact__form form #message:-ms-input-placeholder-shown {
+  vertical-align: top;
+}
+
+.contact__form form #message::-ms-input-placeholder-shown {
+  vertical-align: top;
+}
+
+.contact__form form #message::placeholder-shown {
+  vertical-align: top;
+}
+
+.contact__form form button {
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
@@ -811,20 +858,22 @@ body {
   width: 55%;
   -ms-grid-column-align: center;
       justify-self: center;
+  margin: 4vh 0;
+  height: 100%;
 }
 
-.contact__form button:hover, .contact__form button:focus {
+.contact__form form button:hover, .contact__form form button:focus {
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.contact__form button:active {
+.contact__form form button:active {
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
 }
 
-.contact__form button p {
+.contact__form form button p {
   font-family: ATRegular;
   width: 100%;
 }
