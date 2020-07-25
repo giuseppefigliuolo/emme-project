@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         topbarLogo.classList.remove("hidden");
         topbarFullLogo.classList.add("hidden");
       }
-      // Gallery-scroll handler
+      // Gallery-scroll handler -> qui va creata una funzione
       if (window.scrollY >= landingDescriptionPos && window.scrollY < videoPos) {
         const newScroll = window.scrollY;
         const style = getComputedStyle(gallery);
