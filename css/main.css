@@ -57,6 +57,11 @@ a {
   font-size: 12vw;
 }
 
+.paragraph {
+  font-size: 1.3rem;
+  font-family: "Roboto", sans-serif;
+}
+
 body {
   background-color: #000;
   color: #fff;
@@ -548,6 +553,11 @@ body {
   grid-column: 1/4;
   position: relative;
   top: 2vh;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.project__btn button {
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
@@ -568,20 +578,21 @@ body {
   width: 55%;
   -ms-grid-column-align: center;
       justify-self: center;
+  width: 100%;
 }
 
-.project__btn:hover, .project__btn:focus {
+.project__btn button:hover, .project__btn button:focus {
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.project__btn:active {
+.project__btn button:active {
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
 }
 
-.project__btn p {
+.project__btn button p {
   font-family: ATRegular;
   width: 100%;
 }
@@ -749,8 +760,6 @@ body {
 }
 
 .contact__info p {
-  font-size: 1.3rem;
-  font-family: "Roboto", sans-serif;
   margin-top: -26px;
 }
 
@@ -860,6 +869,8 @@ body {
       justify-self: center;
   margin: 4vh 0;
   height: 100%;
+  max-height: 50px;
+  width: auto;
 }
 
 .contact__form form button:hover, .contact__form form button:focus {
@@ -876,6 +887,62 @@ body {
 .contact__form form button p {
   font-family: ATRegular;
   width: 100%;
+}
+
+.single-project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.single-project__body {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 82%;
+  margin-top: 14vh;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  grid-row: 2/5;
+  margin-bottom: 2rem;
+}
+
+.single-project__body h2 {
+  -ms-flex-item-align: normal;
+      -ms-grid-row-align: normal;
+      align-self: normal;
+  margin-bottom: 2rem;
+}
+
+.single-project__body__issued-by {
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+.single-project__body__issued-by:hover {
+  color: #7edfd9;
+}
+
+.single-project__body__issued-by p {
+  margin-top: 3vh;
+}
+
+.single-project__body img {
+  width: 100%;
+  margin-top: 1.5rem;
 }
 
 .menu__active {
@@ -919,6 +986,11 @@ body {
   font-style: italic;
   font-weight: 500;
   font-size: 12vw;
+}
+
+.paragraph {
+  font-size: 1.3rem;
+  font-family: "Roboto", sans-serif;
 }
 
 @media (min-width: 700px) {
@@ -993,6 +1065,11 @@ body {
   font-style: italic;
   font-weight: 500;
   font-size: 12vw;
+}
+
+.paragraph {
+  font-size: 1.3rem;
+  font-family: "Roboto", sans-serif;
 }
 
 @media (min-width: 1250px) {
