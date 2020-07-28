@@ -49,17 +49,39 @@ document.addEventListener("DOMContentLoaded", () => {
         topbarFullLogo.classList.add("hidden");
       }
       // Gallery-scroll handler -> qui va creata una funzione
-      if (window.scrollY >= landingDescriptionPos && window.scrollY < videoPos) {
-        const newScroll = window.scrollY;
-        const style = getComputedStyle(gallery);
-        const galleryLeftPos = parseInt(style.left, 10);
-        if (newScroll > lastScroll) {
-          gallery.style.left = `${galleryLeftPos - 3}px`;
-        } else {
-          gallery.style.left = `${galleryLeftPos + 3}px`;
+      const movingGallery = (startToScrollPos, EndToScrollPos, galleryToMove) => {
+        if (window.scrollY >= startToScrollPos && window.scrollY < EndToScrollPos) {
+          const newScroll = window.scrollY;
+          const galleryLeftPos = parseInt(getComputedStyle(galleryToMove).left, 10);
+          if (newScroll > lastScroll && galleryLeftPos > -850) {
+            galleryToMove.style.left = `${galleryLeftPos - 3}px`;
+            // console.log(gallery.style.left, galleryLeftPos);
+          } else if (newScroll < lastScroll && galleryLeftPos < 5) {
+            galleryToMove.style.left = `${galleryLeftPos + 3}px`;
+            // console.log(gallery.style.left, galleryLeftPos);
+          }
+          lastScroll = newScroll;
         }
-        lastScroll = newScroll;
-      }
+      };
+      // if (window.scrollY >= landingDescriptionPos && window.scrollY < videoPos) {
+      //   const newScroll = window.scrollY;
+      //   const galleryLeftPos = parseInt(getComputedStyle(gallery).left, 10);
+      //   if (newScroll > lastScroll && galleryLeftPos > -850) {
+      //     console.log();
+      //     gallery.style.left = `${galleryLeftPos - 3}px`;
+      //     console.log(gallery.style.left, galleryLeftPos);
+      //   } else if (newScroll < lastScroll && galleryLeftPos < 5) {
+      //     gallery.style.left = `${galleryLeftPos + 3}px`;
+      //     console.log(gallery.style.left, galleryLeftPos);
+      //   }
+      //   lastScroll = newScroll;
+      // }
+      movingGallery(landingDescriptionPos, videoPos, gallery);
+      movingGallery(
+        document.getElementById("time-is-now").offsetTop,
+        document.querySelector("#chi-sono").offsetTop,
+        document.querySelector("#trd-project .project__gallery__img-container")
+      );
     });
   };
 
