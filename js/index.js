@@ -8,16 +8,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     menuToggles.forEach(el =>
       el.addEventListener("click", evt => {
-        !menu.classList.contains("menu__active") ? menu.classList.add("menu__active") : menu.classList.remove("menu__active");
+        !menu.classList.contains("menu__active") ? menu.classList.toggle("menu__active") : menu.classList.toggle("menu__active");
       })
     );
+    document.addEventListener("click", evt => {
+      if (
+        menu.classList.contains("menu__active") &&
+        !evt.target.parentNode.className.includes("topbar") &&
+        !evt.target.parentNode.className.includes("sidemenu")
+      ) {
+        menu.classList.toggle("menu__active");
+        console.log(evt.target.parentNode.className);
+      }
+    });
   };
 
   const setViewHeight = () => {
     const body = document.querySelector(".landing");
     const sidemenu = document.querySelector(".sidemenu");
 
-    // console.log(`${window.innerHeight - document.querySelector(".topbar").clientHeight}px`);
     body.style.height = `${window.innerHeight - document.querySelector(".topbar").clientHeight}px`;
     sidemenu.style.height = `${window.innerHeight}px`;
   };
