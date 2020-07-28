@@ -374,6 +374,22 @@ body {
   min-width: 25px;
   max-width: 40px;
   margin-top: -1vh;
+  -webkit-animation: scrollDown 3s infinite 0s ease;
+          animation: scrollDown 3s infinite 0s ease;
+}
+
+@-webkit-keyframes scrollDown {
+  0% {
+    -webkit-transform: translateY(-60%);
+            transform: translateY(-60%);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    -webkit-transform: translateY(-60%);
+            transform: translateY(-60%);
+  }
 }
 
 .landing__name {

@@ -55,27 +55,12 @@ document.addEventListener("DOMContentLoaded", () => {
           const galleryLeftPos = parseInt(getComputedStyle(galleryToMove).left, 10);
           if (newScroll > lastScroll && galleryLeftPos > -850) {
             galleryToMove.style.left = `${galleryLeftPos - 3}px`;
-            // console.log(gallery.style.left, galleryLeftPos);
           } else if (newScroll < lastScroll && galleryLeftPos < 5) {
             galleryToMove.style.left = `${galleryLeftPos + 3}px`;
-            // console.log(gallery.style.left, galleryLeftPos);
           }
           lastScroll = newScroll;
         }
       };
-      // if (window.scrollY >= landingDescriptionPos && window.scrollY < videoPos) {
-      //   const newScroll = window.scrollY;
-      //   const galleryLeftPos = parseInt(getComputedStyle(gallery).left, 10);
-      //   if (newScroll > lastScroll && galleryLeftPos > -850) {
-      //     console.log();
-      //     gallery.style.left = `${galleryLeftPos - 3}px`;
-      //     console.log(gallery.style.left, galleryLeftPos);
-      //   } else if (newScroll < lastScroll && galleryLeftPos < 5) {
-      //     gallery.style.left = `${galleryLeftPos + 3}px`;
-      //     console.log(gallery.style.left, galleryLeftPos);
-      //   }
-      //   lastScroll = newScroll;
-      // }
       movingGallery(landingDescriptionPos, videoPos, gallery);
       movingGallery(
         document.getElementById("time-is-now").offsetTop,
