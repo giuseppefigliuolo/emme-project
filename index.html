@@ -8,6 +8,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Mario Mele</title>
   </head>
   <body>
@@ -62,12 +63,12 @@
             based in Milano
           </h2>
         </div>
-        <div class="landing__name capitalize">
+        <div class="landing__name capitalize" data-aos="fade-up">
           <h1>mario mele</h1>
         </div>
-        <img src="./img/lukania/lp_s.jpg" alt="" class="landing__small-img" />
+        <img src="./img/lukania/lp_s.jpg" alt="immagine del progetto lukania" class="landing__small-img" data-aos="fade-right"/>
         <div class="landing__big-img">
-          <img src="./img/lukania/bg_vediamo_s.png" alt="" />
+          <img src="./img/lukania/bg_vediamo_s.png" alt="" data-aos="fade-up"/>
         </div>
         <img src="./img/rettangolo-home.svg" alt="" class="landing__rectangle" />
         <div class="landing__scroll-down">
@@ -185,5 +186,9 @@
     </section>
 
     <script src="./js/index.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

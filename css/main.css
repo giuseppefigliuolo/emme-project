@@ -367,10 +367,13 @@ body {
 
 .landing__scroll-down p {
   font-size: 1.35rem;
+  margin-bottom: 2vh;
 }
 
 .landing__scroll-down img {
   width: 3vh;
+  position: relative;
+  bottom: -8px;
   min-width: 25px;
   max-width: 40px;
   margin-top: -1vh;
@@ -395,9 +398,9 @@ body {
 .landing__name {
   z-index: 30;
   display: block;
-  -webkit-writing-mode: vertical-lr;
-      -ms-writing-mode: tb-lr;
-          writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   font-family: "Playfair Display", serif;
