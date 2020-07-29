@@ -297,7 +297,7 @@ body {
 
 .landing {
   position: relative;
-  top: 8vh;
+  top: 12vh;
   max-width: 100%;
   overflow: hidden;
   display: -ms-grid;
@@ -373,7 +373,7 @@ body {
 .landing__scroll-down img {
   width: 3vh;
   position: relative;
-  bottom: -8px;
+  bottom: -6px;
   min-width: 25px;
   max-width: 40px;
   margin-top: -1vh;
