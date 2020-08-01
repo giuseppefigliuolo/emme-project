@@ -81,16 +81,24 @@ document.addEventListener("DOMContentLoaded", () => {
   // Gallery: Image-slider
   const imageSlider = () => {
     const imgSlider = document.querySelector(".img-slider");
-    const imgs = document.querySelectorAll(".single-project__body__img-container img");
+    const swiperWrapper = document.querySelector(".swiper-wrapper");
+    const imgs = document.querySelectorAll(".single-project__body__img-container a img");
+    console.log(imgs);
 
-    imgs.forEach(img =>
-      img.addEventListener("click", evt => {
+    // toggle handler for gallery to appear
+    imgSlider.addEventListener("click", evt => {
+      if (evt.target === imgSlider) {
+        imgSlider.classList.toggle("hidden");
+      }
+    });
+
+    imgs.forEach(el =>
+      el.addEventListener("click", evt => {
         imgSlider.classList.toggle("hidden");
         swipeJs();
+        console.log(evt.target);
       })
     );
-
-    let immagini = [];
   };
 
   menuHandler();
@@ -100,9 +108,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const swipeJs = () => {
     var mySwiper = new Swiper(".swiper-container", {
-      pagination: {
-        el: ".swiper-pagination",
-      },
+      // pagination: {
+      //   el: ".swiper-pagination",
+      // },
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
