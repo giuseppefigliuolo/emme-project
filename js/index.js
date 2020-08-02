@@ -82,8 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const imageSlider = () => {
     const imgSlider = document.querySelector(".img-slider");
     const swiperWrapper = document.querySelector(".swiper-wrapper");
-    const imgs = document.querySelectorAll(".single-project__body__img-container a img");
-    console.log(imgs);
+    const imgs = document.querySelectorAll(".single-project__body__img-container img");
 
     // toggle handler for gallery to appear
     imgSlider.addEventListener("click", evt => {
@@ -95,8 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
     imgs.forEach(el =>
       el.addEventListener("click", evt => {
         imgSlider.classList.toggle("hidden");
+        slideNum = evt.target.src.replace("http://127.0.0.1:5500/dist/img/", "").match(/\d+/)[0];
         swipeJs();
-        console.log(evt.target);
+        console.log(slideNum);
+        return slideNum;
       })
     );
   };
@@ -105,17 +106,18 @@ document.addEventListener("DOMContentLoaded", () => {
   setViewHeight();
   scrollHandler();
   imageSlider();
-
+  let slideNum;
   const swipeJs = () => {
     var mySwiper = new Swiper(".swiper-container", {
-      // pagination: {
-      //   el: ".swiper-pagination",
-      // },
+      pagination: {
+        el: ".swiper-pagination",
+      },
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
     });
+    mySwiper.slideTo(`${slideNum - 1}`, false, false);
   };
 });
 
