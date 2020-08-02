@@ -78,7 +78,11 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Gallery: Image-slider
-  if (window.location.href.includes("lukania.html")) {
+  if (
+    window.location.href.includes("lukania.html") ||
+    window.location.href.includes("time-is-now.html") ||
+    window.location.href.includes("progetto-3.html")
+  ) {
     const imageSlider = () => {
       const imgSlider = document.querySelector(".img-slider");
       const swiperWrapper = document.querySelector(".swiper-wrapper");
