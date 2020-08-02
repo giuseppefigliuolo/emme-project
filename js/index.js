@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
         !evt.target.parentNode.className.includes("sidemenu")
       ) {
         menu.classList.toggle("menu__active");
-        console.log(evt.target.parentNode.className);
       }
     });
   };
@@ -79,39 +78,39 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Gallery: Image-slider
-  const imageSlider = () => {
-    const imgSlider = document.querySelector(".img-slider");
-    const swiperWrapper = document.querySelector(".swiper-wrapper");
-    const imgs = document.querySelectorAll(".single-project__body__img-container img");
+  if (window.location.href.includes("lukania.html")) {
+    const imageSlider = () => {
+      const imgSlider = document.querySelector(".img-slider");
+      const swiperWrapper = document.querySelector(".swiper-wrapper");
+      const imgs = document.querySelectorAll(".single-project__body__img-container img");
 
-    // toggle handler for gallery to appear
-    imgSlider.addEventListener("click", evt => {
-      if (evt.target === imgSlider) {
-        imgSlider.classList.toggle("hidden");
-      }
-    });
+      // toggle handler for gallery to appear
+      imgSlider.addEventListener("click", evt => {
+        if (evt.target === imgSlider) {
+          imgSlider.classList.toggle("hidden");
+        }
+      });
 
-    imgs.forEach(el =>
-      el.addEventListener("click", evt => {
-        imgSlider.classList.toggle("hidden");
-        slideNum = evt.target.src.replace("http://127.0.0.1:5500/dist/img/", "").match(/\d+/)[0];
-        swipeJs();
-        console.log(slideNum);
-        return slideNum;
-      })
-    );
-  };
+      imgs.forEach(el =>
+        el.addEventListener("click", evt => {
+          imgSlider.classList.toggle("hidden");
+          slideNum = evt.target.src.replace("http://127.0.0.1:5500/dist/img/", "").match(/\d+/)[0];
+          swipeJs();
+          console.log(slideNum);
+          return slideNum;
+        })
+      );
+    };
+    imageSlider();
+  }
 
   menuHandler();
   setViewHeight();
   scrollHandler();
-  imageSlider();
+
   let slideNum;
   const swipeJs = () => {
     var mySwiper = new Swiper(".swiper-container", {
-      pagination: {
-        el: ".swiper-pagination",
-      },
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
