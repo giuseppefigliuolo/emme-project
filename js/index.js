@@ -26,7 +26,7 @@ const setViewHeight = () => {
   const body = document.querySelector(".landing");
   const sidemenu = document.querySelector(".sidemenu");
 
-  if (window.location.href.includes("index")) {
+  if (!window.location.href === "https://marioemme.netlify.app/") {
     body.style.height = `${window.innerHeight - document.querySelector(".topbar").clientHeight}px`;
   }
   sidemenu.style.height = `${window.innerHeight}px`;
@@ -37,7 +37,6 @@ const scrollHandler = () => {
   const topbarFullLogo = document.querySelector(".topbar p");
   // gallery variables
   if (window.location.href.includes("index")) {
-    console.log("ciao");
     window.addEventListener("scroll", evt => {
       const gallery = document.querySelector(".project__gallery__img-container");
       const landingDescriptionPos = document.querySelector(".landing__description h2").offsetTop;
