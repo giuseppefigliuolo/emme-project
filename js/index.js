@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const body = document.querySelector(".landing");
     const sidemenu = document.querySelector(".sidemenu");
 
-    if (isHome()) {
+    if (isHome() && window.innerWidth < 700) {
       body.style.height = `${window.innerHeight - document.querySelector(".topbar").clientHeight}px`;
     }
     sidemenu.style.height = `${window.innerHeight}px`;
@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (newScroll > lastScroll && galleryLeftPos > -850) {
               galleryToMove.style.left = `${galleryLeftPos - 3}px`;
             } else if (newScroll < lastScroll && galleryLeftPos < 5) {
-              console.log("stoscendendo");
               galleryToMove.style.left = `${galleryLeftPos + 3}px`;
             }
             lastScroll = newScroll;
