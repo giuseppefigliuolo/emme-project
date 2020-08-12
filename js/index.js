@@ -54,23 +54,38 @@ document.addEventListener("DOMContentLoaded", () => {
         const gallery = document.querySelector(".project__gallery__img-container");
         const landingDescriptionPos = document.querySelector(".landing__description h2").offsetTop;
         const videoPos = document.querySelector(".project__video").offsetTop;
-        const movingGallery = (startToScrollPos, EndToScrollPos, galleryToMove) => {
-          if (window.scrollY >= startToScrollPos && window.scrollY < EndToScrollPos) {
-            let newScroll = window.scrollY;
-            const galleryLeftPos = parseInt(getComputedStyle(galleryToMove).left, 10);
-            if (newScroll > lastScroll && galleryLeftPos > -850) {
-              galleryToMove.style.left = `${galleryLeftPos - 3}px`;
-            } else if (newScroll < lastScroll && galleryLeftPos < 5) {
-              galleryToMove.style.left = `${galleryLeftPos + 3}px`;
+        const movingGallery = (whereToStart, whereToEnd, galleryName, desktopStart, desktopEnd) => {
+          let newScroll = window.scrollY;
+          if (window.innerWidth < 1000) {
+            if (window.scrollY >= whereToStart && window.scrollY < whereToEnd) {
+              const galleryLeftPos = parseInt(getComputedStyle(galleryName).left, 10);
+              if (newScroll > lastScroll && galleryLeftPos > -850) {
+                galleryName.style.left = `${galleryLeftPos - 3}px`;
+              } else if (newScroll < lastScroll && galleryLeftPos < 5) {
+                galleryName.style.left = `${galleryLeftPos + 3}px`;
+              }
+              lastScroll = newScroll;
             }
-            lastScroll = newScroll;
+          } else {
+            // desktop
+            if (window.scrollY >= desktopStart && window.scrollY < desktopEnd) {
+              const galleryLeftPos = parseInt(getComputedStyle(galleryName).left, 10);
+              if (newScroll > lastScroll && galleryLeftPos > -2000) {
+                galleryName.style.left = `${galleryLeftPos - 3}px`;
+              } else if (newScroll < lastScroll && galleryLeftPos < 5) {
+                galleryName.style.left = `${galleryLeftPos + 3}px`;
+              }
+              lastScroll = newScroll;
+            }
           }
         };
-        movingGallery(landingDescriptionPos, videoPos, gallery);
+        movingGallery(landingDescriptionPos, videoPos, gallery, 0, document.querySelector(".project__btn").offsetTop);
         movingGallery(
           document.getElementById("time-is-now").offsetTop,
           document.querySelector("#chi-sono").offsetTop,
-          document.querySelector("#trd-project .project__gallery__img-container")
+          document.querySelector("#trd-project .project__gallery__img-container"),
+          document.querySelector("#time-is-now .project__video").offsetTop,
+          document.querySelector("#chi-sono .about__bio").offsetTop
         );
       });
     }
